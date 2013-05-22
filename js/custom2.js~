@@ -1,0 +1,373 @@
+function usrname_validation(usr) {
+				var username=usr.value;
+				var letters = /^[a-z A-Z 0-9]{5,8}$/;  
+				if(username.match(letters))
+				   {  
+					
+					document.getElementById('username_msg').innerHTML="";
+					return true;  
+				   }  
+				else  
+				   {  	
+					
+					x="Only Alpha Numeric and Length between 5-8 chars ";
+					document.getElementById('username_msg').innerHTML = x;
+					usr.focus();  
+					return false;  
+			   	   }  
+			}// Username validations()
+
+function pwd_validation(pwd)  
+			  {  
+			       var password = pwd.value;  
+			       var letters = /^[a-z A-Z 0-9]{1,6}$/;  
+				if(password.match(letters))
+				   {  
+					
+					document.getElementById('pwd_msg').innerHTML="";
+					return true;  
+				   }  
+				else  
+				   {  	
+					
+					x="Alpha Numeric only and Password Max length 6 characters";
+					document.getElementById('pwd_msg').innerHTML = x;
+					pwd.focus();  
+					return false;  
+			   	   }  
+			 }//pwd-validation()  
+
+
+function fname_validation(fname)  
+			  {  
+			     var minval=2;
+			     var maxval=6;
+			     var firstname = fname.value;
+				var firstname_len = firstname.length;  
+				if (firstname_len == 0 || firstname_len > maxval || firstname_len < minval)  
+				 {  
+			       msg="First Name should not be empty / length be between "+minval+" to "+maxval;
+		  		      document.getElementById('fname_msg').innerHTML = msg;  
+					fname.focus();  
+					return false;  
+				  }  
+				else {
+					
+					document.getElementById('fname_msg').innerHTML = "";
+					return true;  
+				}
+			 }//fname-validation()  
+
+function lname_validation(lname)  
+			  {  
+			     var minval=2;
+			     var maxval=15;
+			     var lastname = lname.value;
+				var lastname_len = lastname.length;  
+				if (lastname_len == 0 || lastname_len >= maxval || lastname_len < minval)  
+				 {  
+			       msg="Last Name should not be empty / length be between "+minval+" to "+maxval;
+		  		      document.getElementById('lname_msg').innerHTML = msg;  
+					lname.focus();  
+					return false;  
+				  }  
+				else {
+					
+					document.getElementById('lname_msg').innerHTML = "";
+					return true;  
+				}
+			 }//lname-validation()  
+
+
+function propic_validation(profile_pic)  
+			  {  
+			     var extension=profile_pic.value.split('.').pop('.');
+				 //(extension=='jpg' || extension == 'gif' || extension == 'png'))  
+			     if (extension != "jpg" && extension != "png" && extension != "gif") 
+ 				 {  
+			              msg="Picture format should be .jpg, .png, .gif only";
+		  		      document.getElementById('propic_msg').innerHTML = msg;  
+				      profile_pic.focus();  
+				      return false;  
+				  }  
+			     else {
+					
+					document.getElementById('propic_msg').innerHTML = "";
+					return true;  
+				}
+			        
+			  }//Propic-validation() 
+
+
+function dob_validation(day)  
+			  {  
+			     var day=day.value;
+				
+			     if (day=="sel") 
+ 				 {  
+			              msg="Please Select Date/ Month / Year";
+		  		      document.getElementById('dob_msg').innerHTML = msg;  
+				      this.focus();  
+				      return false;  
+				  }  
+			     else {
+					
+					document.getElementById('dob_msg').innerHTML = "";
+					return true;  
+				}
+			        
+			  }//Dob-validation() 
+
+
+function hobby_validation(hobby) 
+			  {  
+				
+				var painting=document.getElementById('optionsRadios1');
+				var singing=document.getElementById('optionsRadios2');
+				var traveling=document.getElementById('optionsRadios3');
+				var dancing=document.getElementById('optionsRadios4');
+				var gardening=document.getElementById('optionsRadios5');
+				var other=document.getElementById('optionsRadios6');
+
+				
+
+				if(hobby.name==painting.name)
+				    {
+					if(painting.checked==false)
+					    {
+						msg="Please Select any Hobby First one is Manadatory";
+		  		      		document.getElementById('hob_msg').innerHTML = msg;  
+				      		this.focus();  
+					    }
+					 else {
+						document.getElementById('hob_msg').innerHTML="";
+					 }
+					return true;	
+				
+				    }
+
+				else if(hobby.name==singing.name)
+				    {
+					if(singing.checked==false && painting.checked==false)
+					    {
+						msg="Please Select any Hobby";
+		  		      		document.getElementById('hob_msg').innerHTML = msg;  
+				      		this.focus();  
+					    }
+					 else{
+						document.getElementById('hob_msg').innerHTML="";
+					 }
+									
+					return true;	
+				
+				    }
+
+				else if(hobby.name==traveling.name)
+				    {
+					if(traveling.checked==false && singing.checked==false && painting.checked==false)
+					    {
+						msg="Please Select any Hobby";
+		  		      		document.getElementById('hob_msg').innerHTML = msg;  
+				      		this.focus();  
+					    }
+					 else{
+						document.getElementById('hob_msg').innerHTML="";
+					 }
+									
+					return true;	
+				
+				    }
+
+				else if(hobby.name==dancing.name)
+				    {
+					if(dancing.checked==false && traveling.checked==false && singing.checked==false && painting.checked==false)
+					    {
+						msg="Please Select any Hobby";
+		  		      		document.getElementById('hob_msg').innerHTML = msg;  
+				      		this.focus();  
+					    }
+					 else{
+						document.getElementById('hob_msg').innerHTML="";
+					 }
+									
+					return true;	
+				
+				    }
+				 else if(hobby.name==gardening.name)
+				    {
+					if(gardening.checked==false && dancing.checked==false && traveling.checked==false && singing.checked==false && painting.checked==false)
+					    {
+						msg="Please Select any Hobby";
+		  		      		document.getElementById('hob_msg').innerHTML = msg;  
+				      		this.focus();  
+					    }
+					 else{
+						document.getElementById('hob_msg').innerHTML="";
+					 }
+									
+					return true;	
+				
+				    }
+				
+				 else if(hobby.name==other.name)
+				    {
+					if(other.checked==false && gardening.checked==false && dancing.checked==false && traveling.checked==false && singing.checked==false && painting.checked==false)
+					    {
+						msg="Please Select any Hobby";
+		  		      		document.getElementById('hob_msg').innerHTML = msg;  
+				      		this.focus();  
+					    }
+					 else{
+						document.getElementById('hob_msg').innerHTML="";
+					 }
+									
+					return true;	
+				
+				    }
+			} // Hobby validation
+
+
+function country_validation(country)  
+			  {  
+			     //var country=country.value;
+				
+			     if (country.selectedIndex<0) 
+ 				 {  
+				      msg="Please Select any Country";
+		  		      document.getElementById('country_msg').innerHTML = msg;  
+				      this.focus();  
+				      return false;  
+				  }  
+			     else {
+					
+					document.getElementById('country_msg').innerHTML = "";
+					return true;  
+				}
+			        
+			  }//country-validation() 
+
+
+function phone_validation(ph) {
+				
+				var phnumber=ph.value; 
+				//var phone_pattern = /^[7-9]\d{3}-\d{3}-\d{4}$/;
+				//var phone_pattern = /^(\+)(\d{2})(\s)(\d{3}-)(\d{3}-)(\d{4})$/;
+				//var phone_pattern = ^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$;
+				var phone_pattern = /^(\+)(\d{2})(\s)(\({1})(\d{3})(\){1})(\-{1})(\d{3}-)(\d{4})$/;
+				
+
+				if(phnumber.value==null || phnumber.value=="") {
+					x="Phone Format should be + 91 (990)-824-7888";
+					document.getElementById('phone_msg').innerHTML = x;
+					ph.focus();  
+					return false; 
+				}
+					
+				else if(phnumber.match(phone_pattern))
+				   {  
+					
+					document.getElementById('phone_msg').innerHTML="";
+					return true;  
+				   }  
+				else  
+				   {  	
+					
+					x="Phone Format should be + 91 (990)-824-7888";
+					document.getElementById('phone_msg').innerHTML = x;
+					ph.focus();  
+					return false; 
+			   	   } 
+				
+			}// Phone validations()
+
+
+			/** Individual Element Validation is completed */
+
+
+		/* submit button Validation */
+
+function validateForm(regForm) {
+		var username = document.getElementById('inputname');
+		var password = document.getElementById('inputPassword');
+		var fname = document.getElementById('inputfname');
+		var lname = document.getElementById('inputlname');
+		var propic = document.getElementById('inputpropic');
+		var gender = document.getElementById('inputradio');
+		var dob = document.getElementById('day');
+		var month = document.getElementById('mon');
+		var year = document.getElementById('year');			
+		var hobby1 = regForm.painting;
+		var hobby2 = document.getElementById('optionsRadios2');
+		var hobby3 = document.getElementById('optionsRadios3');
+		var hobby4 = document.getElementById('optionsRadios4');
+		var hobby5 = document.getElementById('optionsRadios5');
+		var hobby6 = document.getElementById('optionsRadios6');
+		var country = document.getElementById('inputcountry');
+		var phnum = document.getElementById('inputPhone');
+
+		var phone_pattern = /^(\+)(\d{2})(\s)(\({1})(\d{3})(\){1})(\-{1})(\d{3}-)(\d{4})$/;
+
+		/*alert(phnum.match(phone_pattern));*/
+
+		if(usrname_validation(username)) {
+			if(pwd_validation(password)) {
+			    if(fname_validation(fname)) {
+				if(lname_validation(lname)) {
+			           if(propic_validation(propic)) {
+					 if(dob_validation(dob)) {
+		 			    if(dob_validation(month)) {
+						if(dob_validation(year)) {
+						   if(hobby_validation(hobby1)) {
+							if(country_validation(country)) {
+							     if(phone_validation(phnum)) {
+							     }
+							}
+						    }
+						 }
+					     }
+					  }
+				    }
+				}
+			    }
+			 }
+		    }
+		    
+		     else {
+			        count=0;
+				if(hobby1.checked==true)
+					count++;
+				if(hobby2.checked==true)
+					count++;
+				if(hobby3.checked==true)
+					count++;
+				if(hobby4.checked==true)
+					count++;
+				if(hobby5.checked==true)
+					count++;
+				if(hobby6.checked==true)
+					count++;
+				
+				
+				document.getElementById('alertmessage').style.visibility="visible";
+
+				if(count<=2) {
+				document.getElementById('progress').style.width="85%";
+				}
+				else if(count<=4) {
+				document.getElementById('progress').style.width="90%";
+				}
+				else{
+				document.getElementById('progress').style.width="100%";
+				}
+				document.getElementById('progressbar').style.visibility="visible";
+				return false;
+			}			
+return false;
+}
+
+function hideBar() {
+	document.getElementById('alertmessage').style.visibility="hidden";
+	document.getElementById('progressbar').style.visibility="hidden";
+  return true;
+}
+

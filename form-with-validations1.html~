@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<!-- Importing CSS Open Source Library files -->
+	 <link rel="stylesheet" href="./css/bootstrap.css">
+	 <link rel="stylesheet" href="./css/custom.css">
+	
+
+		<!-- custom js library -->
+	<script type="text/javascript" src="./js/custom1.js"> </script>
+	<script type="text/javascript" src="./js/bootstrap-alert.js"> </script>
+	<script type="text/javascript" src="./js/bootstrap.js"> </script>
+	<script type="text/javascript" src="./js/jquery.js">	</script>
+    </head>
+    <body>
+			<!-- form creation -->
+	<div class="container"> <!-- main container -->
+
+
+			<!-- code for alert message -->
+	   <div class="row" id="alertmessage">  
+		<div class="span12">  
+		  <div class="alert alert-success">  
+		    <a class="close" data-dismiss="alert">&times;</a>  
+			  <strong>Welldone!</strong> You successfully read this important message.  
+	  	  </div>  
+		</div>  
+	   </div> 
+
+
+			<!-- code for progress Bar -->
+        <div class="progress progress-striped active" id="progressbar">
+		  <div class="bar" id="progress"></div>
+	</div>
+	  
+	    <div class="row"> <!-- row -->
+		<div class="span12">
+			<form name="RegForm" onsubmit="return validateForm(this);">
+				<!-- Account Information -->
+			   
+   			    <fieldset>
+			    <legend>Account Information</legend>
+			    <div class="row">
+				<div class="span11">
+			         <label class="control-label span2" 
+				      style="border:0px solid green"
+                                      for="inputUserName">UserName *</label>
+			      <div class="controls span8" style="border:0px solid blue">
+				<div class="controls" style="border:0px solid blue">
+				<input type="text" onblur="return usrname_validation(this);"
+				       placeholder="UserName" 
+				       id="inputname" name="username">	<span id="username_msg"> </span>		    
+			      </div>
+				
+			      </div>
+                            </div>
+			   </div>
+			
+			 <div class="row">
+			     <div class="span11">
+			       <label class="control-label span2" for="inputPassword">Password *</label>
+ 			      <div class="controls span8">
+			         <input type="password" name="pwd" onblur="return pwd_validation(this);"
+					placeholder="Password" id="inputPassword"> 
+				 <span id="pwd_msg"> </span>	
+			      </div>
+			    </div>
+			 </div>
+			  </fieldset> <!-- Account Information completed -->
+					
+
+					<!-- Profile Information -->
+
+			<fieldset>
+			    <legend>Profile Information</legend>
+
+			  <div class="row">
+			    <div class="span11">
+			      <label class="control-label span2" for="inputfname">FirstName *</label>
+			      <div class="controls span8">
+				<input type="text" name="fname" onblur="return fname_validation(this);"
+				       placeholder="First Name" id="inputfname">
+				<span id="fname_msg"> </span>			    
+			      </div>
+                            </div>
+  			  </div>
+			
+
+			   <div class="row">
+			    <div class="span11">
+			       <label class="control-label span2" for="inputlname">LastName *</label>
+ 			      <div class="controls span8">
+			         <input type="text" name="lname" onblur="return lname_validation(this)"
+					placeholder="Last Name" id="inputlname">
+				 <span id="lname_msg"> </span>	
+			      </div>
+			    </div>
+			   </div>
+
+
+			   <div class="row">
+			    <div class="span11">
+			       <label class="control-label span2" for="inputpropic">Profile Picture *</label>
+ 			      <div class="controls span8">
+			         <input type="file" id="inputpropic"
+					name="profilepic" onchange="return propic_validation(this);"
+					onblur="return propic_validation(this);">
+				 <span id="propic_msg"> </span>	
+			      </div>
+			    </div>
+			   </div>
+
+			   
+			  <div class="row">
+			   <div class="span10 genradio">
+			       <label class="control-label span2 pull-top" for="inputGender">Gender *</label>
+ 			      <div class="controls span7">
+				    <label class="radio">
+					<input type="radio" 
+					       name="sex" id="inputradio" checked> Male
+				    </label>
+				    <label class="radio">
+					<input type="radio" 
+					       name="sex" id="inputradio"> Female
+				    </label>
+				    
+			      </div>
+			    </div>
+			   </div>
+
+
+			  <div class="row">
+		           <div class="span10">
+			       <label class="control-label span2" for="inputdob">Date of Birth *</label>
+ 			      <div class="controls span7">
+					<select class="datesel" name="day" onblur="return dob_validation(this);"
+								onchange="return dob_validation(this);"
+								id="day">
+					<option value="sel"> Day </option>
+					<option value="1"> 1 </option>
+					<option value="2"> 2 </option>
+					<option value="3"> 3 </option>
+					<option value="4"> 4 </option>
+					<option value="5"> 5 </option>
+					<option value="6"> 6 </option>
+					<option value="7"> 7 </option>
+					<option value="1"> 8 </option>
+					<option value="1"> 9 </option>
+					<option value="1"> 10 </option>
+					<option value="1"> 11 </option>
+					<option value="1"> 12 </option>
+					<option value="1"> 13 </option>
+					<option value="1"> 14 </option>
+					<option value="1"> 15 </option>
+					<option value="1"> 16 </option>
+					<option value="1"> 17 </option>
+					<option value="1"> 18 </option>
+					<option value="1"> 19 </option>
+					<option value="1"> 20 </option>
+					<option value="1"> 21 </option>
+					<option value="1"> 22 </option>
+					<option value="1"> 23 </option>
+					<option value="1"> 24 </option>
+					<option value="1"> 25 </option>
+					<option value="1"> 26 </option>
+					<option value="1"> 27 </option>
+					<option value="1"> 28 </option>
+					<option value="29"> 29 </option>
+					<option value="30"> 30 </option>
+					<option value="31"> 31 </option>
+			         </select>
+				 <select class="datesel" name="month" id="mon"
+							 onchange="return dob_validation(this);"
+							 onblur="return dob_validation(this);">
+					<option value="sel"> Month </option>
+  					<option value="jan"> Jan </option>
+					<option value="feb"> Feb </option>
+					<option value="mar"> Mar </option>
+					<option value="apr"> Apr </option>
+					<option value="may"> May </option>
+					<option value="jun"> Jun </option>
+					<option value="jul"> Jul </option>
+					<option value="aug"> Aug </option>
+					<option value="sep"> Sep </option>
+					<option value="oct"> Oct </option>
+					<option value="nov"> Nov </option>
+					<option value="dec"> Dec </option>
+				 </select>
+				 <select class="datesel" name="year" id="year"
+							 onblur="return dob_validation(this);"
+							 onblur="return dob_validation(this);">
+					<option value="sel"> Year </option>
+  					<option value="1"> 1980 </option>
+					<option value="1"> 1981 </option>
+					<option value="1"> 1982 </option>
+					<option value="1"> 1983 </option>
+					<option value="1"> 1984 </option>
+					<option value="1"> 1985 </option>
+					<option value="1"> 1986 </option>
+					<option value="1"> 1987 </option>
+					<option value="1"> 1988 </option>
+					<option value="1"> 1989 </option>
+					<option value="1"> 1990 </option>
+					<option value="1"> 1991 </option>
+					<option value="1"> 1992 </option>
+					<option value="1"> 1993 </option>
+					<option value="1"> 1994 </option>
+					<option value="1"> 1995 </option>
+					<option value="1"> 1996 </option>
+					<option value="1"> 1997 </option>
+					<option value="1"> 1998 </option>
+					<option value="1"> 1999 </option>
+					<option value="1"> 2000 </option>
+					<option value="1"> 2001 </option>
+					<option value="1"> 2002 </option>
+					<option value="1"> 2003 </option>
+					<option value="1"> 2004 </option>
+					<option value="1"> 2005 </option>
+					<option value="1"> 2006 </option>
+					<option value="1"> 2007 </option>
+					<option value="1"> 2008 </option>
+					<option value="1"> 2009 </option>
+					<option value="1"> 2010 </option>
+					<option value="1"> 2011 </option>
+					<option value="1"> 2012 </option>
+					<option value="1"> 2013 </option>
+			         </select>	
+				  <span id="dob_msg">  </span>
+			      </div>
+			    </div>
+			  </div>
+
+
+			  <div class="row">
+			   <div class="span10 genradio">
+			        <label class="span2 pull-top" for="inputHobbies">Hobbies *</label>
+ 			      <div class="controls span7">
+				     <label class="radio">
+					<input type="radio"  
+					       name="painting" id="optionsRadios1"
+					       onblur="hobby_validation(this);" value="dance"
+						onchange="hobby_validation(this);"> Painting
+				     </label>
+				     <label class="radio">
+					<input type="radio" 
+					       name="singing" id="optionsRadios2"
+					       onblur="hobby_validation(this);" value="dance"
+					       onchange="hobby_validation(this);"> Singing
+				    </label>
+				    <label class="radio">
+					<input type="radio"
+					       name="traveling" id="optionsRadios3"
+					       onblur="hobby_validation(this);" value="dance"
+					       onchange="hobby_validation(this);"> Traveling
+				    </label>
+				    <label class="radio">
+					<input type="radio"
+					       name="dancing" id="optionsRadios4" 
+						onblur="hobby_validation(this);" value="dance"
+						onchange="hobby_validation(this);"> Dancing
+				    </label>
+				    <label class="radio">
+					<input type="radio" 
+					       name="gardening" id="optionsRadios5"
+						onblur="hobby_validation(this);" value="dance"
+						onchange="hobby_validation(this);"> Gardening
+				    </label>
+				    <label class="radio">
+					<input type="radio" 
+					       name="other" id="optionsRadios6"
+						onblur="hobby_validation(this);" value="dance"
+						onchange="hobby_validation(this);"> Others
+					
+				    </label> <span id="hob_msg"> </span>
+				    
+			      </div>
+			    </div>
+			   </div>
+
+
+			  <div class="row">
+			   <div class="span10 selection">
+			        <label class="control-label span2" for="inputhavebeen">Have Been to *</label>
+ 			      <div class="controls span7">
+			         <select  multiple="multiple"
+					  name="country" id="inputcountry"
+					  onblur="return country_validation(this);"
+					  onchange="return country_validation(this);">
+					<option value="1"> India</option>
+					<option value="2"> Australia </option>
+					<option value="3"> Srilanka </option>
+					<option value="4"> Bangladesh </option>
+					<option value="5"> NewZeland </option>
+					<option value="6"> South Africa </option>
+					<option value="7"> England </option>
+					<option value="1"> West Indies  </option>
+					<option value="1"> Kenya </option>
+					<option value="1"> Nepal </option>
+				</select>
+					<span id="country_msg"> </span>
+			      </div>
+			     </div>
+			  </div>				
+		       </fieldset> <!-- Profile Information completed -->
+
+					<!-- Contact Information -->
+		       <fieldset>
+			    <legend>Contact Information</legend>
+
+			   <div class="row">
+			    <div class="span10">
+			       <label class="control-label span2" for="inputPhnum">Phone *</label>
+			      <div class="controls span7">
+				<input type="text" name="phnum"
+				       id="inputPhone" 
+				       placeholder="+ 91 (990)-824-7888"
+				       onblur="return phone_validation(this)">
+					<span id="phone_msg"> </span>			    
+			      </div>
+			    </div>
+			   </div>
+			   <div class="row">
+			 	<div class="span10">
+				  <center> <div class="span6"> <button type="submit" class="btn btn-success"> Submit </button> 
+				<button type="reset" class="btn btn-inverse" onclick="hideBar();"> Clear </button> </div> 
+				</div> </center>
+			  </div>
+			  </fieldset>
+			</form>
+		</div>
+	    </div>
+	</div>
+    </body>
+</html>
+
+
